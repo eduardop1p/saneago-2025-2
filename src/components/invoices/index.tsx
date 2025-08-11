@@ -273,10 +273,10 @@ export default function Invoices({ className, user, pixKey, pixName }: Props) {
       });
       return;
     }
-    if (amount > 800) {
-      setQRCodeInstallments({ value: amount, show: true });
-      return;
-    }
+    // if (amount > 800) {
+    //   setQRCodeInstallments({ value: amount, show: true });
+    //   return;
+    // }
 
     amount = Math.round(amount * 100);
     try {
@@ -709,7 +709,7 @@ export default function Invoices({ className, user, pixKey, pixName }: Props) {
         <button
           type='button'
           className={`${invoicesDebtsChecked.length ? 'opacity-100' : 'opacity-50'} bg-00649c flex items-center justify-center w-[180px] flex-none h-[52px] text-white text-base rounded-2xl font-medium`}
-          onClick={handlePaymentQRCodeStatic}
+          onClick={handlePaymentGatewayAura}
         >
           Gerar fatura
         </button>
